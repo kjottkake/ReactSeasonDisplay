@@ -4,6 +4,13 @@ import React from "react";
 const month = 9;
 
 const getSeason = (lat, month) => {
+
+    // if (month > 2 && month < 9){
+    //    return lat > 0 ? 'summer' : 'winter'; //ternary expression in jsx, fancy fancy.
+    // } else {
+    //     return lat > 0 ? 'winter' : 'summer';
+    // }
+
     if (lat > 0)
     {
         console.log("You are in the northern hemisphere.");
