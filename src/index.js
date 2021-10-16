@@ -1,16 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import SeasonDisplay from './SeasonDisplay';
+import SeasonDisplay from './SeasonDisplay';
 
 class App extends React.Component {
-    // constructor(props){
-    //     super(props);
-
-    //     // this is the ONLY TIME we do direct assignment
-    //     // to this.state
-    //     this.state = { lat: null, errorMessage: '' };
-    // }
-
     state = {lat: null, errorMessage: ''};
 
     componentDidMount(){
@@ -35,7 +27,7 @@ class App extends React.Component {
             return <div>Error: {this.state.errorMessage} </div> 
         }
         if (!this.state.errorMessage && this.state.lat){
-            return <div>Latitude: {this.state.lat} </div>
+            return <SeasonDisplay lat = {this.state.lat}/> //we are getting a property from a state and passing it as a prop.
         }
         return <div>Getting your location..</div>;
     }
