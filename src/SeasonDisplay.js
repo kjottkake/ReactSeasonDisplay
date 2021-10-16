@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 const month = new Date().getMonth();
 // const month = 9;
 
@@ -35,9 +37,12 @@ const getSeason = (lat, month) => {
 
 const SeasonDisplay = (prop) => {
    const season = getSeason(prop.lat, month);
-
+   const text = season === 'winter' ? 'Its cold. It is winter!' : 'It is summer! Let`s go to the beach!'
+   const icon = season === 'winter' ? 'snowflake icon' : 'sun icon';
     return <div>
-        <h1>{season === 'winter' ? 'Its cold. It is winter!' : 'It is summer! Let`s go to the beach!'}</h1>
+        <i className={icon}></i>
+        <h1>{text}</h1>
+        <i className={icon}></i>
         </div>;
 }
 
