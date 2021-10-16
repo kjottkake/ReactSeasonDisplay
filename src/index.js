@@ -15,6 +15,18 @@ class App extends React.Component {
         //     (err) => console.log(err) //failure callback
         // );
 
+        // window.navigator.geolocation.getCurrentPosition(
+        //     (position) => {
+        //         this.setState({ lat: position.coords.latitude});
+        //     }, //success callback
+        //     (err) => {
+        //         this.setState({ errorMessage: err.message});
+        //     }
+        // );
+    }
+
+
+    componentDidMount(){
         window.navigator.geolocation.getCurrentPosition(
             (position) => {
                 this.setState({ lat: position.coords.latitude});
@@ -23,10 +35,6 @@ class App extends React.Component {
                 this.setState({ errorMessage: err.message});
             }
         );
-    }
-
-
-    componentDidMount(){
         console.log("My component was rendered to the screen");
     }
 
