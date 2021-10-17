@@ -22,8 +22,7 @@ class App extends React.Component {
         console.log("My component was just updated - it rerendered.");
     }
 
-    // React says we have to define render!!
-    render() {
+    renderContent(){
         if (this.state.errorMessage && !this.state.lat){
             return <div>Error: {this.state.errorMessage} </div> 
         }
@@ -31,6 +30,15 @@ class App extends React.Component {
             return <SeasonDisplay lat = {this.state.lat}/> //we are getting a property from a state and passing it as a prop.
         }
         return <Spinner message="Please Accept Location Request."/>;
+    }
+
+    //Refactored logical statements into renderContent() then calls on function in render.
+    render() {
+        return(
+            <div className="border red">
+                {this.renderContent()}
+            </div>
+        );
     }
 }
 
